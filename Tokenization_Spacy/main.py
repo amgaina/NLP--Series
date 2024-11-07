@@ -1,40 +1,40 @@
 import spacy
 
-# nlp1 = spacy.blank("en")
-# doc = nlp1("Dr.Ram is going to New York on a plane which cost him $500 one-way.")
-# #  Each word
-# list_word = []
-# for each in doc:
-#     list_word.append(each)
-# print(list_word)
+nlp1 = spacy.blank("en")
+doc = nlp1("Dr.Ram is going to New York on a plane which cost him $500 one-way.")
+#  Each word
+list_word = []
+for each in doc:
+    list_word.append(each)
+print(list_word)
 
 
-# doc2 = nlp1("Check five $")
-# # Spacy showing that five is a number
-# print(doc2[1])
-# print(doc2[1].like_num)
+doc2 = nlp1("Check five $")
+# Spacy showing that five is a number
+print(doc2[1])
+print(doc2[1].like_num)
 
 
-# # Spacy showing that $ is a currency
-# print(doc2[2])
-# print(doc2[2].is_currency)
+# Spacy showing that $ is a currency
+print(doc2[2])
+print(doc2[2].is_currency)
 
 # Now, lets try with spanish language
-# nlp2 = spacy.blank("es")
-# text = nlp2("Hola, espero que estés bien. Gracias por visitar mi github. Dame 5 $ por favor")
-# for each in text:
-#     print(each, each.is_currency, each.is_digit)
+nlp2 = spacy.blank("es")
+text = nlp2("Hola, espero que estés bien. Gracias por visitar mi github. Dame 5 $ por favor")
+for each in text:
+    print(each, each.is_currency, each.is_digit)
 
 # Token Customization
 
-# from spacy.symbols import ORTH
-# nlp3 = spacy.blank("en")
-# nlp3.tokenizer.add_special_case("Gimme",[
-#     {"ORTH":"Gim"},
-#     {"ORTH":"me"}
-# ])
-# doc = nlp3("Gimme my money")
-# print([_ for _ in doc])
+from spacy.symbols import ORTH
+nlp3 = spacy.blank("en")
+nlp3.tokenizer.add_special_case("Gimme",[
+    {"ORTH":"Gim"},
+    {"ORTH":"me"}
+])
+doc = nlp3("Gimme my money")
+print([_ for _ in doc])
 
 # Think stats is a free book to study statistics (https://greenteapress.com/thinkstats2/thinkstats2.pdf)
 
